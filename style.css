@@ -1,0 +1,16 @@
+.inline{
+  display: inline-block;
+}
+
+#space {
+  padding-top: 25px;
+}
+
+#table{
+  width: 100%;
+  align: center;
+}
+
+td{
+  text-align: center;
+}

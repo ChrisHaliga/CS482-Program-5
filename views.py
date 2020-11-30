@@ -30,10 +30,7 @@ class Item(View):
       thisItem = MyItem(user=user, zipcode=zipcode)
       if len(MyItem.objects.filter(user=user, zipcode=zipcode)) > 0:
         thisItem=MyItem.objects.filter(user=user, zipcode=zipcode)[0]
-
-      #TODO: use weather API - if zip is none do not save
+        
       thisItem.save()
-    #Json doesn't support tuples, so a list of
-    #objects (dictionaries) is constructed to return
     ret = MyItem.objects.filter(user=user).values()
     return JsonResponse(json.dumps(list(ret)),safe=False)
